@@ -1,0 +1,195 @@
+/*
+*
+*   CSS - Layout
+* 
+*   01. General
+*   02. Header / Navigation
+*   03. Hero
+*   04. About me
+*   05. Projects
+*   06. Skills
+*   07. Contact me 
+*   08. Footer
+*/
+
+
+/*
+*   01. General
+*/
+
+:root {
+    --DarkSienna: hsl(344, 44%, 15%);
+    --EnglishViolet: hsl(285, 22%, 32%);
+    --Rhythm: hsl(266, 13%, 49%);
+    --ShadowBlue: hsl(212, 22%, 61%);
+    --PaleCerulean: hsl(200, 35%, 74%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, 
+h2, 
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-block-end: 3.125rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-block-end: 1.25rem;
+}
+
+h3 {
+    font-size: 1.17rem;
+}
+
+
+section, footer {
+    background-color: var(--DarkSienna);
+    color: var(--white);
+    padding-block: 6.25rem;
+}
+
+section div, footer div, header div {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border-radius: 8px;
+}
+
+/*
+*   02. Header / Navigation
+*/
+
+header {
+    position:fixed;
+    inline-size: 100%;
+}
+
+header .container {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container div {
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+/*
+*   03. Hero
+*/
+
+#hero {
+    block-size: 800px;
+    display: flex;
+    align-items: center;
+
+}
+
+#hero h1{ 
+    font-size: 4.375rem;
+}
+
+/*
+*   04. About me
+*/
+
+#about-me {
+    background-color: var(--white);
+    color: var(--DarkSienna);
+}
+
+#about-me div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#about-me p { 
+    max-inline-size: 700px;
+    text-align: center;
+}
+
+#about-me img {
+    margin-block-end: 1.25rem;
+}
+
+
+/*
+*   05. Projects
+*/
+
+#projects p {
+    margin-block-end: 1.25rem;
+}
+
+#projects ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+#projects li {
+    background-color: var(--white);
+    color: var(--DarkSienna);
+    inline-size: calc((1000px - 32px) / 3);
+    block-size: 321px;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#projects li p {
+    margin: 0;
+}
+
+/*
+*   06. Skills
+*/
+
+/*
+*   07. Contact me
+*/
+
+#contact-me {
+    background-color: var(--white);
+    color: var(--DarkSienna);
+}
+
+/*
+*   08. Footer
+*/
