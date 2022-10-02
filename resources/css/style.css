@@ -83,6 +83,22 @@ img {
     border-radius: 8px;
 }
 
+.button {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    box-shadow: hsl(184deg 28% 56% / 38%) 0 4px 14px 0;
+    white-space: nowrap;
+    border-radius: 8px;
+    padding: 0.96875rem 4.5rem;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.button:hover {
+    box-shadow: rgb(111 170 174 / 23%) 0px 6px 20px;
+    background: hsla(0, 0%, 95%, 0.9);
+}
 /*
 *   02. Header / Navigation
 */
@@ -115,6 +131,7 @@ nav ul li {
     block-size: 800px;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 
 }
 
@@ -144,6 +161,8 @@ nav ul li {
 
 #about-me img {
     margin-block-end: 1.25rem;
+    inline-size: 200px;
+    block-size: 200px;
 }
 
 
@@ -152,7 +171,7 @@ nav ul li {
 */
 
 #projects p {
-    margin-block-end: 1.25rem;
+    margin-block-end: 3.125rem;
 }
 
 #projects ul {
@@ -171,15 +190,55 @@ nav ul li {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    position: relative;
+}
+
+#projects li:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    box-shadow: inset 0px -258px 111px -86px var(--DarkSienna);
 }
 
 #projects li p {
     margin: 0;
+    color: hsl(0, 0%, 100%);
+    z-index: 1;
 }
 
+#projects li h3 {
+    z-index: 1;
+    color: hsl(0, 0%, 100%);
+    margin-block-end: 0.625rem;
+}
+
+#projects li img {
+    object-fit: fill;
+    inline-size: 100%;
+    block-size: 100%;
+    position:absolute;
+    left: 0;
+    top: 0;
+}
 /*
 *   06. Skills
 */
+
+#skills {
+    padding-block-start: 0px;
+}
+
+#skills li {
+    inline-size: 60px;
+    block-size: 60px;
+    border-radius: 30px;
+    margin-inline-end: 10px;
+    background-color: var(--white);
+    display:inline-block;
+}
 
 /*
 *   07. Contact me
@@ -189,6 +248,8 @@ nav ul li {
     background-color: var(--white);
     color: var(--DarkSienna);
 }
+
+
 
 /*
 *   08. Footer
