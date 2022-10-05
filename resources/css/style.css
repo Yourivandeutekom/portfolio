@@ -159,6 +159,7 @@ nav a {
 */
 
 #hero {
+    position: relative;
     block-size: 800px;
     display: flex;
     align-items: center;
@@ -166,12 +167,40 @@ nav a {
 
 }
 
-#hero div {
+#hero > div {
     inline-size: 100%;
 }
 
 #hero h1{ 
     font-size: 4.375rem;
+}
+
+#hero .button-container {
+    display:flex;
+    gap: 0.625rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+#hero .social-icons {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+
+#hero .social-icons li {
+    margin-block: 0.625rem;
+    inline-size: 45px;
+    block-size: 45px;
+    border-radius: 1.40625rem;
+    background-color: var(--white);
+    display: inline-block
+}
+
+@media screen and (min-width: 1000px) {
+    #hero .social-icons li {
+        display: block;
+    }
 }
 
 /*
