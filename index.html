@@ -101,14 +101,22 @@
         <section id="contact-me">
             <div>
                 <h2>Lorem ipsum dolor sit amet.</h2>
-                <form action="" method="POST">
-                    <label for="name">name</label>
-                    <input type="text" id="name" name="name">
-                    <label for="email">email</label>
-                    <input type="text" id="email" name="email">
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                    <input type="submit" value="send">
+                <form action="https://formsubmit.co/yourivandeutekom@gmail.com" method="POST">
+                    <div class="input-text">
+                        <input type="text" id="name" name="name" required>  
+                        <label for="name">Name</label><br>
+                    </div>
+                    <div class="input-text">
+                        <input type="text" id="email" name="email" required>
+                        <label for="email">Email</label><br>
+                    </div>
+                    <div class="input-textarea">
+                        <textarea name="message" id="message" rows="10" required></textarea>
+                        <label for="message">Message</label><br>
+                    </div>
+                    <input type="hidden" name="_subject" value="Portfolio message:">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="submit" class="button" value="Send message">
                 </form>
             </div>
         </section>

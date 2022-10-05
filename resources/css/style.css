@@ -99,6 +99,7 @@ img {
     box-shadow: rgb(111 170 174 / 23%) 0px 6px 20px;
     background: hsla(0, 0%, 95%, 0.9);
 }
+
 /*
 *   02. Header / Navigation
 */
@@ -250,6 +251,7 @@ nav a {
     left: 0;
     top: 0;
 }
+
 /*
 *   06. Skills
 */
@@ -274,6 +276,78 @@ nav a {
 #contact-me {
     background-color: var(--white);
     color: var(--DarkSienna);
+}
+
+#contact-me form {
+    inline-size: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-block-start: 3rem;
+}
+
+#contact-me form div {
+    position: relative;
+}
+
+#contact-me form input,
+#contact-me form textarea {
+    transition: 0.3s ease-in-out;
+    padding: .75rem 1.25rem;
+}
+
+#contact-me form input:focus,
+#contact-me form input:valid,
+#contact-me form textarea:focus,
+#contact-me form textarea:valid {
+    background-color: hsl(0, 0%, 95%);
+    outline: 0;
+}
+
+#contact-me form input ~ label,
+#contact-me form textarea ~ label {
+    position: absolute;
+    top: .75rem;
+    left: 1.25rem;
+    transition: 0.3s ease-in-out;
+}
+
+#contact-me form input:focus ~ label,
+#contact-me form input:valid ~ label,
+#contact-me form textarea:focus ~ label,
+#contact-me form textarea:valid ~ label {
+    transform: translateX(-20px) translateY(-30px);
+    font-size: 12px;
+}
+
+#contact-me form .input-text {
+    inline-size: calc(50% - (15px / 2));
+}
+
+#contact-me form .input-textarea {
+    inline-size: 100%;
+    margin-block-start: 0.9375rem;
+}
+
+#contact-me form div input,
+#contact-me form div textarea {
+    inline-size: 100%;
+    border: 0;
+    border-bottom: 1px solid var(--DarkSienna);
+    background-color: hsl(0, 0%, 98%);
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+#contact-me form input.button {
+    background-color: var(--EnglishViolet);
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+    border: 0;
+    padding: 0.96875rem 4.5rem;
+}
+
+#contact-me form input.button:hover {
+    background-color: hsl(285, 17%, 38%);
 }
 
 
