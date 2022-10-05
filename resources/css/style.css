@@ -65,9 +65,16 @@ section, footer {
     padding-block: 6.25rem;
 }
 
-section div, footer div, header div {
+section > div, footer div, header div {
     max-width: 1000px;
     margin: 0 auto;
+    padding-inline: 20px;
+}
+
+@media screen and (min-width: 1000px) {
+    section div, footer div, header div {
+        padding: 0;
+    }
 }
 
 li {
@@ -198,7 +205,8 @@ nav a {
 *   05. Projects
 */
 
-#projects p {
+#projects div > p {
+    max-inline-size: 700px;
     margin-block-end: 3.125rem;
 }
 
@@ -211,8 +219,8 @@ nav a {
 #projects li {
     background-color: var(--white);
     color: var(--DarkSienna);
-    inline-size: calc((1000px - 32px) / 3);
-    block-size: 321px;
+    inline-size: 100%;
+    block-size: calc(100vw - 40px);
     border-radius: 0.5rem;
     padding: 1.25rem;
     display: flex;
@@ -229,6 +237,26 @@ nav a {
     inline-size: 100%;
     block-size: 100%;
     box-shadow: inset 0px -258px 111px -86px var(--DarkSienna);
+}
+
+@media screen and (min-width: 600px) {
+    #projects li {
+        inline-size: calc((50% - 8px));
+        block-size: calc((100vw - 40px) / 2 - 8px);
+    }
+}
+
+@media screen and (min-width: 850px) {
+    #projects li {
+        inline-size: calc((100% - 32px) / 3);
+        block-size: calc((100vw - 72px) / 3);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #projects li {
+        block-size: calc((1000px - 32px) / 3);
+    }
 }
 
 #projects li p {
@@ -261,8 +289,8 @@ nav a {
 }
 
 #skills li {
-    inline-size: 60px;
-    block-size: 60px;
+    inline-size: 45px;
+    block-size: 45px;
     border-radius: 1.875rem;
     margin-inline-end: 0.625rem;
     background-color: var(--white);
@@ -279,7 +307,7 @@ nav a {
 }
 
 #contact-me form {
-    inline-size: 700px;
+    inline-size: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 0.9375rem;
@@ -320,19 +348,23 @@ nav a {
     font-size: 12px;
 }
 
-#contact-me form .input-text {
-    inline-size: calc(50% - (15px / 2));
-}
-
+#contact-me form .input-text,
 #contact-me form .input-textarea {
     inline-size: 100%;
     margin-block-start: 0.9375rem;
+}
+
+@media screen and (min-width: 700px) {
+    #contact-me form .input-text {
+        inline-size: calc(50% - (15px / 2));
+    }
 }
 
 #contact-me form div input,
 #contact-me form div textarea {
     inline-size: 100%;
     border: 0;
+    border-radius: 0;
     border-bottom: 1px solid var(--DarkSienna);
     background-color: hsl(0, 0%, 98%);
 }
@@ -352,6 +384,10 @@ nav a {
 /*
 *   08. Footer
 */
+
+footer {
+    text-align: center;
+}
 
 footer div {
     display: flex;
