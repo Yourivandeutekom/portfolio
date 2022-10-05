@@ -282,7 +282,7 @@ nav a {
     inline-size: 700px;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 0.9375rem;
     margin-block-start: 3rem;
 }
 
@@ -335,7 +335,6 @@ nav a {
     border: 0;
     border-bottom: 1px solid var(--DarkSienna);
     background-color: hsl(0, 0%, 98%);
-    border-radius: 0.5rem 0.5rem 0 0;
 }
 
 #contact-me form input.button {
@@ -350,8 +349,28 @@ nav a {
     background-color: hsl(285, 17%, 38%);
 }
 
-
-
 /*
 *   08. Footer
 */
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer ul {
+    display: flex;
+    gap: 10px;
+}
+
+footer li {
+    background-color: var(--white);
+    inline-size: 30px;
+    block-size: 30px;
+    border-radius: 0.9325rem;
+}
+
+footer p {
+    margin-block-start: 1.5rem;
+}
