@@ -144,6 +144,24 @@ header .container div {
     margin: 0;
 }
 
+#desktop-navigation {
+    display: none;
+}
+
+#mobile-navigation {
+    display: block
+}
+
+@media screen and (min-width: 1000px) {
+    #desktop-navigation {
+        display: block;
+    }
+    
+    #mobile-navigation {
+        display: none;
+    }
+}
+
 nav ul li {
     display: inline-block;
     margin: 1rem;
@@ -160,11 +178,16 @@ nav a {
 
 #hero {
     position: relative;
-    block-size: 800px;
+    block-size: 700px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+}
 
+@media screen and (min-width: 1000px) {
+    #hero {
+        block-size: 800px;
+    }
 }
 
 #hero > div {
