@@ -80,7 +80,7 @@ ul {
 }
 
 img {
-    border-radius: 8px;
+    border-radius: 0.5rem;
 }
 
 .button {
@@ -89,7 +89,7 @@ img {
     color: var(--black);
     box-shadow: hsl(184deg 28% 56% / 38%) 0 4px 14px 0;
     white-space: nowrap;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     padding: 0.96875rem 4.5rem;
     text-decoration: none;
     transition: 0.3s ease-in-out;
@@ -106,6 +106,21 @@ img {
 header {
     position:fixed;
     inline-size: 100%;
+    z-index: 5;
+    transition: 0.3s ease-in-out;
+}
+
+header.scroll {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--ShadowBlue);
+}
+
+header.scroll .container {
+    color: var(--DarkSienna);
+}
+
+header.scroll a {
+    color: var(--DarkSienna);
 }
 
 header .container {
@@ -113,6 +128,8 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 75px;
+    background-color: transparent;
 }
 
 header .container div {
@@ -121,6 +138,12 @@ header .container div {
 
 nav ul li {
     display: inline-block;
+    margin: 1rem;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
 }
 
 /*
@@ -133,6 +156,10 @@ nav ul li {
     align-items: center;
     justify-content: flex-start;
 
+}
+
+#hero div {
+    inline-size: 100%;
 }
 
 #hero h1{ 
@@ -177,7 +204,7 @@ nav ul li {
 #projects ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 1rem;
 }
 
 #projects li {
@@ -185,8 +212,8 @@ nav ul li {
     color: var(--DarkSienna);
     inline-size: calc((1000px - 32px) / 3);
     block-size: 321px;
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -234,8 +261,8 @@ nav ul li {
 #skills li {
     inline-size: 60px;
     block-size: 60px;
-    border-radius: 30px;
-    margin-inline-end: 10px;
+    border-radius: 1.875rem;
+    margin-inline-end: 0.625rem;
     background-color: var(--white);
     display:inline-block;
 }
