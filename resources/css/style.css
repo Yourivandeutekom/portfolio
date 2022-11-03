@@ -78,10 +78,10 @@ section > div, footer div, header div {
     }
 }
 
-#portfolio-project div {
+/* #portfolio-project div {
     max-width: 1920px;
     margin: 0 auto;
-}
+} */
 
 li {
     list-style: none;
@@ -106,6 +106,8 @@ img {
     padding: 0.96875rem 4.5rem;
     text-decoration: none;
     transition: 0.3s ease-in-out;
+    /* added because of portfolio */
+    display: inline-block;
 }
 
 .button:hover {
@@ -479,8 +481,62 @@ footer p {
 *   09. Portfolio project
 */
 
-#portfolio-project > div {
+/* #portfolio-project > div {
     display:grid;
     grid-template-columns: 50% minmax(25%, 485px);
     gap: 15px;
+} */
+
+#portfolio-project {
+    position: fixed;
+    top: 0;
+    left: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    background-color: var(--DarkSienna);
+    z-index: 6;
+    color: var(--white)
+}
+
+.portfolio-container {
+    max-inline-size: 1000px;
+    margin: 6.25rem auto;
+    display: flex;
+    gap: 50px;
+}
+
+.portfolio-container .portfolio-images {
+    inline-size: 600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.portfolio-images li {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+}
+
+.portfolio-images .big-image {
+    inline-size: 100%;
+    block-size: calc(600px / 16 * 9);
+}
+
+.portfolio-images .small-image {
+    inline-size: calc(50% - 10px);
+    block-size: 290px;
+}
+
+.portfolio-container .portfolio-about {
+    inline-size: 350px;
+}
+
+.portfolio-about section {
+    padding: 0;
+    margin-block: 1.25rem;
+}
+
+.portfolio-about h3 {
+    margin-block-end: 0.75rem;
 }
