@@ -10,6 +10,7 @@
 *   06. Skills
 *   07. Contact me 
 *   08. Footer
+*   09. Portfolio project
 */
 
 
@@ -75,6 +76,11 @@ section > div, footer div, header div {
     section div, footer div, header div {
         padding: 0;
     }
+}
+
+#portfolio-project div {
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 li {
@@ -269,6 +275,8 @@ nav a {
 }
 
 #projects li {
+    position: relative;
+    top: 0;
     background-color: var(--white);
     color: var(--DarkSienna);
     inline-size: 100%;
@@ -278,7 +286,11 @@ nav a {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+#projects li:hover {
+    top: -5px;
 }
 
 #projects li:after {
@@ -461,4 +473,14 @@ footer li {
 
 footer p {
     margin-block-start: 1.5rem;
+}
+
+/* 
+*   09. Portfolio project
+*/
+
+#portfolio-project > div {
+    display:grid;
+    grid-template-columns: 50% minmax(25%, 485px);
+    gap: 15px;
 }
