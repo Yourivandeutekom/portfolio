@@ -40,6 +40,7 @@ html {
 h1, 
 h2, 
 h3,
+h4,
 p {
     margin: 0;
     padding: 0;
@@ -481,62 +482,95 @@ footer p {
 *   09. Portfolio project
 */
 
-/* #portfolio-project > div {
-    display:grid;
-    grid-template-columns: 50% minmax(25%, 485px);
-    gap: 15px;
-} */
-
-#portfolio-project {
+#portfolio-opacity-layer {
     position: fixed;
     top: 0;
     left: 0;
     inline-size: 100%;
     block-size: 100%;
-    background-color: var(--DarkSienna);
     z-index: 6;
-    color: var(--white)
+    background-color: hsla(0, 0%, 0%, 75%)
 }
 
-.portfolio-container {
-    max-inline-size: 1000px;
-    margin: 6.25rem auto;
-    display: flex;
-    gap: 50px;
-}
-
-.portfolio-container .portfolio-images {
-    inline-size: 600px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.portfolio-images li {
+#portfolio-project {
+    position: fixed;
+    top: 5%;
+    left: 25%;
     background-color: var(--white);
-    border-radius: 0.5rem;
+    inline-size: 1000px;
+    block-size: 1100px;
+    z-index: 7;
+    padding: 3.125rem;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.portfolio-images .big-image {
+#portfolio-project .big-image-container {
     inline-size: 100%;
-    block-size: calc(600px / 16 * 9);
+    block-size: 450px;
+    background-color: var(--black);
+    border-radius: 0.5rem
 }
 
-.portfolio-images .small-image {
-    inline-size: calc(50% - 10px);
-    block-size: 290px;
+#portfolio-project .image-container {
+    inline-size: 100%;
+    display: flex;
+    gap: 1.25rem;
 }
 
-.portfolio-container .portfolio-about {
-    inline-size: 350px;
+#portfolio-project .small-image-container {
+    inline-size: calc(100% / 2);
+    block-size: 400px;
+    background-color: var(--black);
+    border-radius: 0.5rem
 }
 
-.portfolio-about section {
-    padding: 0;
-    margin-block: 1.25rem;
+#portfolio-project article {
+    inline-size: 80%;
+    margin-block: 3.125rem;
+    padding-inline-end: 1.5625rem;
 }
 
-.portfolio-about h3 {
-    margin-block-end: 0.75rem;
+#portfolio-project section h3 {
+    margin-block: 1.25rem 0.625rem;
 }
+
+#portfolio-project aside {
+    inline-size: 20%;
+    padding-inline-start: 1.5625rem;
+    margin-block: 3.125rem;
+}
+
+#portfolio-project aside h4 {
+    margin-block: 1.25rem 0.625rem;
+}
+
+#portfolio-project article section {
+    all: unset;
+}
+
+#portfolio-close-btn {
+    inline-size: 50px;
+    block-size: 50px;
+    position: fixed;
+    top: 5%;
+    left: calc(25% + 1000px + 20px);
+    z-index: 7;
+    border: 3px solid white;
+    border-radius: 25px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    transform: rotate(0deg);
+}
+
+#portfolio-close-btn:hover {
+    transform: rotate(180deg);
+}
+
