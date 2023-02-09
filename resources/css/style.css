@@ -180,6 +180,24 @@ nav ul li {
 nav a {
     color: var(--white);
     text-decoration: none;
+    position: relative;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    inline-size: 0;
+    block-size: 2px;
+    background-color: var(--white);
+    transition: inline-size 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+nav a:hover::before {
+    left: 0;
+    right: auto;
+    inline-size: 100%;
 }
 
 /*
