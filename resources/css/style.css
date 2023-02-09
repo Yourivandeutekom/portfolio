@@ -196,7 +196,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-image: url('../images/pexels-julien-bachelet-880989.jpg');
+    background-image: url('../images/main-banner.jpg');
     background-size: 100%;
     box-shadow: inset 0px -183px 130px -50px var(--DarkSienna);
 }
