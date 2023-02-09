@@ -30,6 +30,7 @@
 
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -185,12 +186,19 @@ nav a {
 *   03. Hero
 */
 
+h1 {
+    color: var(--white);
+}
+
 #hero {
     position: relative;
     block-size: 700px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    background-image: url('../images/pexels-julien-bachelet-880989.jpg');
+    background-size: 100%;
+    box-shadow: inset 0px -183px 130px -50px var(--DarkSienna);
 }
 
 @media screen and (min-width: 1000px) {
@@ -239,11 +247,6 @@ nav a {
 *   04. About me
 */
 
-#about-me {
-    background-color: var(--white);
-    color: var(--DarkSienna);
-}
-
 #about-me div {
     display: flex;
     flex-direction: column;
@@ -253,6 +256,7 @@ nav a {
 #about-me p { 
     max-inline-size: 700px;
     text-align: center;
+    margin-block-end: 10px;
 }
 
 #about-me img {
@@ -265,6 +269,11 @@ nav a {
 /*
 *   05. Projects
 */
+
+#projects {
+    background-color: var(--white);
+    color: var(--DarkSienna);
+}
 
 #projects div > p {
     max-inline-size: 700px;
@@ -352,6 +361,8 @@ nav a {
 */
 
 #skills {
+    background-color: var(--white);
+    color: var(--DarkSienna);
     padding-block-start: 0px;
 }
 
@@ -360,18 +371,13 @@ nav a {
     block-size: 45px;
     border-radius: 1.875rem;
     margin-inline-end: 0.625rem;
-    background-color: var(--white);
+    background-color: var(--DarkSienna);
     display:inline-block;
 }
 
 /*
 *   07. Contact me
 */
-
-#contact-me {
-    background-color: var(--white);
-    color: var(--DarkSienna);
-}
 
 #contact-me form {
     inline-size: 100%;
@@ -395,12 +401,13 @@ nav a {
 #contact-me form input:valid,
 #contact-me form textarea:focus,
 #contact-me form textarea:valid {
-    background-color: hsl(0, 0%, 95%);
+    background-color: var(--white);
     outline: 0;
 }
 
 #contact-me form input ~ label,
 #contact-me form textarea ~ label {
+    color: var(--white);
     position: absolute;
     top: .75rem;
     left: 1.25rem;
@@ -432,8 +439,8 @@ nav a {
     inline-size: 100%;
     border: 0;
     border-radius: 0;
-    border-bottom: 1px solid var(--DarkSienna);
-    background-color: hsl(0, 0%, 98%);
+    border-bottom: 1px solid var(--white);
+    background-color: var(--DarkSienna);
 }
 
 #contact-me form input.button {
@@ -482,80 +489,103 @@ footer p {
 *   09. Portfolio project
 */
 
-#portfolio-opacity-layer {
+#projects-opacity-layer {
     position: fixed;
     top: 0;
     left: 0;
     inline-size: 100%;
     block-size: 100%;
     z-index: 6;
-    background-color: hsla(0, 0%, 0%, 75%)
+    background-color: hsla(0, 0%, 0%, 75%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
-#portfolio-project {
+#projects-opacity-layer.activated {
+    opacity: 1;
+}
+
+#projects-container {
     position: fixed;
     top: 5%;
-    left: 25%;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
     background-color: var(--white);
     inline-size: 1000px;
     block-size: 1100px;
     z-index: 7;
     padding: 3.125rem;
     overflow: scroll;
-    display: flex;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#projects-container.activated {
+    opacity: 1;
+}
+
+.project-entry-1,
+.project-entry-2,
+.project-entry-3,
+.project-entry-4,
+.project-entry-5,
+.project-entry-6 {
     flex-wrap: wrap;
 }
 
-#portfolio-project .big-image-container {
+#projects-container .big-image-container {
     inline-size: 100%;
     block-size: 450px;
     background-color: var(--black);
     border-radius: 0.5rem
 }
 
-#portfolio-project .image-container {
+#projects-container .image-container {
     inline-size: 100%;
     display: flex;
     gap: 1.25rem;
 }
 
-#portfolio-project .small-image-container {
+#projects-container .small-image-container {
     inline-size: calc(100% / 2);
     block-size: 400px;
     background-color: var(--black);
     border-radius: 0.5rem
 }
 
-#portfolio-project article {
+#projects-container article {
     inline-size: 80%;
     margin-block: 3.125rem;
     padding-inline-end: 1.5625rem;
 }
 
-#portfolio-project section h3 {
+#projects-container section h3 {
     margin-block: 1.25rem 0.625rem;
 }
 
-#portfolio-project aside {
+#projects-container aside {
     inline-size: 20%;
     padding-inline-start: 1.5625rem;
     margin-block: 3.125rem;
 }
 
-#portfolio-project aside h4 {
+#projects-container aside h4 {
     margin-block: 1.25rem 0.625rem;
 }
 
-#portfolio-project article section {
+#projects-container article section {
     all: unset;
 }
 
-#portfolio-close-btn {
+#projects-close-btn {
     inline-size: 50px;
     block-size: 50px;
     position: fixed;
     top: 5%;
-    left: calc(25% + 1000px + 20px);
+    left: 1100px;
+    right: 0;
+    margin-inline: auto;
     z-index: 7;
     border: 3px solid white;
     border-radius: 25px;
@@ -566,11 +596,16 @@ footer p {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     transform: rotate(0deg);
+    opacity: 0;
 }
 
-#portfolio-close-btn:hover {
+#projects-close-btn:hover {
     transform: rotate(180deg);
+}
+
+#projects-close-btn.activated {
+    opacity: 1;
 }
 
